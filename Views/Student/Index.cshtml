@@ -1,0 +1,36 @@
+@model IEnumerable<YourProjectName.Models.Student>
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h1>Students</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Field Study</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.StudentName</td>
+                <td>@student.FieldStudy.FieldStudyName</td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@student.StudentId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@student.StudentId">Edit</a> |
+                    <form asp-action="Delete" asp-route-id="@student.StudentId" method="post" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* Pagination logic can be added here *@

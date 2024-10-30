@@ -1,0 +1,19 @@
+@model YourProjectName.Models.Student
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="StudentId" />
+    <div class="form-group">
+        <label asp-for="StudentName"></label>
+        <input asp-for="StudentName" class="form-control" />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+    @* Add other input fields as necessary *@
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

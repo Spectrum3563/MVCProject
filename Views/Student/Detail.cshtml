@@ -1,0 +1,18 @@
+@model YourProjectName.Models.Student
+@{
+    ViewData["Title"] = "Student Detail";
+}
+
+<h1>Student Details</h1>
+
+<dl>
+    <dt>Student ID</dt>
+    <dd>@Model.StudentId</dd>
+    <dt>Name</dt>
+    <dd>@Model.StudentName</dd>
+    <dt>Field Study</dt>
+    <dd>@Model.FieldStudy.FieldStudyName</dd>
+    <!-- Add other fields as necessary -->
+</dl>
+
+<a asp-action="Index">Back to List</a>
